@@ -6,17 +6,21 @@ header.header
                 span.icon: i.fa.fa-home
                 | 首页
             a.header-item(class='#{productions}', href='/productions')
-                //- span.icon: i.fa.fa-star
+                span.icon: i.fa.fa-star
                 | 成员作品
-            a.header-item(class='#{resources}')
+            a.header-item(class='#{resources}', href='/resources')
                 //- span.icon: i.fa.fa-star
                 | 资源
-            a.header-item(class='#{resources}')
+            a.header-item(class='#{members}')
                 //- span.icon: i.fa.fa-star
                 | 成员简介
-            a.header-item 更多
         .header-right
             span.header-item
                 a.button.is-info.is-outlined.is-inverted
                     span.icon: i.fa.fa-github
                     | Github
+            .header-item
+                .control.has-icon.is-grouped.columns
+                    input.input.is-flat.column.is-8(type='text')
+                    i.fa.fa-search
+                    a.button.is-info.is-outlined.is-inverted.column.is-4 Search

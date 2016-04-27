@@ -1,8 +1,8 @@
-.site-progress {
+.transparent {
 	background: rgba(255, 255, 255, 0.3);
 }
 
-.site-progress progress {
+.transparent progress {
 	opacity: 0.9;
 }
 
