@@ -1,5 +1,69 @@
-extends layout
+extends base
+
+block vars
+	- var home = 'is-active'
+
+block hero
+	.columns.is-vcentered
+		.column
+			h1.title Vocaloid 学习制作群
+				h2.subtitle 教程、资源集散地
+				p.content 天灵灵地灵灵，太上老君快显灵
+		.column.is-4
+			article.message.is-warning
+				.message-header 群公告
+				.message-body
+					| 上官博啦！为DC激动！！（字数不足我选择死亡。。）
+					| 上官博啦！为DC激动！！（字数不足我选择死亡。。）
+					| 上官博啦！为DC激动！！（字数不足我选择死亡。。）
+					| 上官博啦！为DC激动！！（字数不足我选择死亡。。）
+					| 上官博啦！为DC激动！！（字数不足我选择死亡。。）
 
 block content
-  h1= title
-  p Welcome to #{title}
+	section.section
+		.container
+			.tile.is-ancestor
+				.tile.is-vertical.is-8
+					.tile
+						.tile.is-parent.is-vertical
+							article.tile.is-child.notification.is-primary
+								h1.title 成员作品区
+								p.content 看看群内大触都有什么黑科技
+								a.button.is-info.is-outlined.is-inverted(href='/productions') 进去看看
+						.tile.is-parent
+							article.tile.is-child.notification.is-info
+								h1.title 资源共享区
+								p.content
+									| 汇集Vocaloid制作相关软件
+								.columns
+									.column: a.button.is-info.is-outlined.is-inverted 主程序/音源
+									.column: a.button.is-info.is-outlined.is-inverted 各类宿主
+								.columns
+									.column: a.button.is-info.is-outlined.is-inverted 插件专区
+									.column: a.button.is-info.is-outlined.is-inverted 其他资源
+					.tile.is-parent
+						article.tile.is-child.notification.is-danger
+							h1.title 教程专区
+							p.content 从入门到放弃
+							a.button.is-info.is-outlined.is-inverted 进去看看
+
+				.tile.is-parent
+					article.tile.is-child.notification.is-success
+						h1.title 博客专区
+						ul.blog-list
+							li
+								a 【这是教程】Vocaloid 4 技巧调教
+								span.date 04-16
+							li
+								a 只是交换！！【别告诉我你们全玩的破解版】
+								span.date 04-16
+							li
+								a aldskfj lsadfj lasdjf laskd jlka f
+								span.date 04-16
+							li
+								a alskdfj lkasd fasjdlf jalsdkf adsjlfj alsdkjf asdlfj akl 
+								span.date 04-16
+							li
+								a alskdfj lkasd fasjdlf jalsdkf adsjlfj alsdkjf asdlfj akl 
+								span.date 04-16
+	
