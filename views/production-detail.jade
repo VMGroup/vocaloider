@@ -18,16 +18,12 @@ block hero
     p.content.subtitle.is-6 11:09 PM - 1 Jan 2016
     .box.transparent
         h4.title.is-4 下载地址：
-        span.tag.resource-download-link
-            a(href='http://pan.baidu.com') 百度盘
-            &nbsp;
-            | 提取码：n3jp
-            
-        span.tag.resource-download-link
-            a(href='http://pan.baidu.com') 百度盘
-            &nbsp;
-            | 提取码：n3jp
-        span.tag.resource-download-link: a http://baidu.com
+        .columns.is-multiline
+            .column.is-3
+                span.tag
+                    a(href='http://pan.baidu.com') 百度盘
+                    &nbsp;
+                    | 提取码：n3jp
 
 block content
     section.section
