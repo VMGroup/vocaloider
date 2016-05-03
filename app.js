@@ -20,7 +20,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'static')));
 
 app.use('/', routes);
 app.use('/users', users);
@@ -31,6 +31,10 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+// Database setup
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://192.168.99.100:27017/VMGroup');
 
 // error handlers
 
