@@ -13,3 +13,7 @@ exports.productionDetail = function (req, res) {
 exports.resources = function (req, res) {
         res.render('resources', {});
 };
+
+exports.resourceDetail = function (req, res) {
+        res.render('resource-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.production_id});
+};

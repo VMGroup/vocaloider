@@ -32,6 +32,11 @@
 	padding-top: 5px;
 }
 
+.tag {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
 .tag.resource-download-link {
     margin-right: 10px;
 }
