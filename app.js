@@ -35,6 +35,11 @@ app.use(function(req, res, next) {
 // Database setup
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://192.168.99.100:27017/VMGroup');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+    console.log('Database successfully connected.');
+});
 
 // error handlers
 
