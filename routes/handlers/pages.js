@@ -7,13 +7,17 @@ exports.productions = function (req, res) {
 };
 
 exports.productionDetail = function (req, res) {
-        res.render('production-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.production_id});
+    res.render('production-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.production_id});
 };
 
 exports.resources = function (req, res) {
-        res.render('resources', {});
+    res.render('resources', {});
 };
 
 exports.resourceDetail = function (req, res) {
-        res.render('resource-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.production_id});
+    res.render('resource-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.production_id});
+};
+
+exports.login = function (req, res) {
+    res.render('login', {});
 };

@@ -1,0 +1,23 @@
+extends base
+
+block hero
+    h1.title 登录
+    h2.subtitle Vocaloid 学习制作群
+    p.content 不登录就想看资源？没门！(((o(*ﾟ▽ﾟ*)o)))
+
+block content
+    section.section
+        .container
+            .columns
+                .column.is-6.is-offset-3
+                    h1.title 登录
+                    form(method='POST' target='/login')
+                        p.control.has-icon
+                            input.input(type='text', name='username', placeholder='用户名')
+                            i.fa.fa-user
+                        p.control.has-icon
+                            input.input(type='password', name='password', placeholder='密码')
+                            i.fa.fa-lock
+                        p.control
+                            button.button.is-success 登录
+                            button.button.is-link(style='margin-left: 10px;') 取消
