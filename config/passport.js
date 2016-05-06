@@ -15,7 +15,7 @@ module.exports = function (passport) {
         });
     });
 
-    // Signup
+    // 注册
     passport.use('local-signup', new LocalStrategy(
         {
             passReqToCallback: true
@@ -43,6 +43,7 @@ module.exports = function (passport) {
         }
     ));
 
+    // 登录
     passport.use('local-login', new LocalStrategy(
         {
             passReqToCallback: true
