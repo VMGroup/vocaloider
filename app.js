@@ -8,6 +8,11 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var passport = require('passport');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var flash = require('connect-flash');
+
 var app = express();
 
 // view engine setup
@@ -22,23 +27,36 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 
+// Database setup
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://192.168.99.100:27017/VMGroup');
+var dbConnection = mongoose.connection;
+dbConnection.on('error', console.error.bind(console, 'connection error:'));
+dbConnection.once('open', function () {
+    console.log('Database successfully connected.');
+});
+
+// Passport configuration
+app.use(flash());
+app.use(session({
+    secret: 'vocaloider',
+    store: new MongoStore({mongooseConnection: dbConnection}),
+    resave: false,
+    saveUninitialized: false
+}));
+require('./config/passport')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Routers
 app.use('/', routes);
-app.use('/users', users);
+app.use('/', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
-});
-
-// Database setup
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://192.168.99.100:27017/VMGroup');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-    console.log('Database successfully connected.');
 });
 
 // error handlers

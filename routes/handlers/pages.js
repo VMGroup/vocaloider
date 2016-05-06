@@ -19,5 +19,6 @@ exports.resourceDetail = function (req, res) {
 };
 
 exports.login = function (req, res) {
-    res.render('login', {});
+    var msg = req.flash('error').shift();
+    res.render('login', {message: msg});
 };
