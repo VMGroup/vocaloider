@@ -48,6 +48,9 @@ require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Router middlewares
+require('./config/middleware/users.js')(app);
+
 // Routers
 app.use('/', routes);
 app.use('/', users);

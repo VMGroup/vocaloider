@@ -49,7 +49,7 @@ module.exports = function (passport) {
         },
         function (req, username, password, done) {
             if (req.user) {
-                return done(null, user);
+                return done(null, req.user);
             }
             User.findOne({username: username}, function (err, user) {
                 if (err) return done(err);

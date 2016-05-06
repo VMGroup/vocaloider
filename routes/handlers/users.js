@@ -5,3 +5,9 @@ exports.signup = function (req, res) {
         user: req.user.username
     });
 };
+
+exports.logout = function (req, res) {
+    req.logout();
+
+    res.redirect('/');
+};

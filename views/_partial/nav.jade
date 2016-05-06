@@ -3,10 +3,10 @@ header.header
         .header-left
             a.header-item(href='/'): h1.title VMGroup
             a.header-item(class='#{home}', href='/')
-                span.icon: i.fa.fa-home
+                //- span.icon: i.fa.fa-home
                 | 首页
             a.header-item(class='#{productions}', href='/productions')
-                span.icon: i.fa.fa-star
+                //- span.icon: i.fa.fa-star
                 | 成员作品
             a.header-item(class='#{resources}', href='/resources')
                 //- span.icon: i.fa.fa-star
@@ -15,12 +15,13 @@ header.header
                 //- span.icon: i.fa.fa-star
                 | 成员简介
         .header-right
-            span.header-item
-                a.button.is-info.is-outlined.is-inverted
-                    span.icon: i.fa.fa-github
-                    | Github
-            .header-item
-                .control.has-icon.is-grouped.columns
-                    input.input.is-flat.column.is-8(type='text')
-                    i.fa.fa-search
-                    a.button.is-info.is-outlined.is-inverted.column.is-4 Search
+            //- span.header-item
+            //-     a.button.is-info.is-outlined.is-inverted
+            //-         span.icon: i.fa.fa-github
+            //-         | Github
+            if locals.user
+                a.header-item #{locals.user.username}
+                a.header-item(href='/logout') 登出
+            else
+                span.header-item
+                    a.button.is-info.is-outlined.is-inverted(href='/login') 登录

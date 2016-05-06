@@ -19,6 +19,10 @@ exports.resourceDetail = function (req, res) {
 };
 
 exports.login = function (req, res) {
+    if (req.user) {
+        res.redirect('/resources');
+        return;
+    }
     var msg = req.flash('error').shift();
     res.render('login', {message: msg});
 };
