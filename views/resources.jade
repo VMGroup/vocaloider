@@ -8,18 +8,16 @@ block hero
     h2.subtitle 教程、资源集散地
     p.content 天灵灵地灵灵，太上老君快显灵
     .content
-        .columns
-            .column.is-narrow
-                a.button.is-outlined.is-info.is-inverted.is-medium VC主程序/音源
-            .column.is-narrow
-                a.button.is-outlined.is-info.is-inverted.is-medium 宿主专区
-            .column.is-narrow
-                a.button.is-outlined.is-danger.is-inverted.is-medium 插件专区
-            .column.is-narrow
-                a.button.is-outlined.is-danger.is-inverted.is-medium 其他资源
+        
 
-block idol
-    img(src='/img/lukav4x.png')
+block hero-footer
+    nav.tabs.is-boxed
+        .container
+            ul
+                li(class='#{tab1}'): a VC主程序／音源
+                li(class='#{tab2}'): a 宿主专区
+                li(class='#{tab3}'): a 插件专区
+                li(class='#{tab4}'): a 其他资源
 
 block content
     section.section
@@ -51,3 +49,6 @@ block content
                         td.is-link: a Cubase Elements 8 Windows x64
                         td dyzdyz010
                         td 2016-04-28
+
+block idol
+    img(src='/img/lukav4x.png')

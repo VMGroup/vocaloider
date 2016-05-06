@@ -11,7 +11,7 @@ exports.worksDetail = function (req, res) {
 };
 
 exports.resources = function (req, res) {
-    res.render('resources', {});
+    res.render('resources', {tab1: 'is-active'});
 };
 
 exports.resourceDetail = function (req, res) {
