@@ -4,8 +4,8 @@ var pages = require('./handlers/pages');
 
 /* GET home page. */
 router.get('/', pages.index);
-router.get('/productions', pages.productions);
-router.get('/productions/:production_id', pages.productionDetail);
+router.get('/works', pages.works);
+router.get('/works/:works_id', pages.worksDetail);
 router.get('/resources', pages.resources);
 router.get('/resources/:resource_id', pages.resourceDetail);
 router.get('/login', pages.login);
