@@ -11,7 +11,13 @@ exports.worksDetail = function (req, res) {
 };
 
 exports.resources = function (req, res) {
-    res.render('resources', {tab1: 'is-active'});
+    var activeTab = 'tab1';
+    if (req.query.category) {
+        activeTab = req.query.category;
+    }
+    params = {};
+    params[activeTab] = 'is-active';
+    res.render('resources', params);
 };
 
 exports.resourceDetail = function (req, res) {

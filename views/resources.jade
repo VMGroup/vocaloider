@@ -14,10 +14,10 @@ block hero-footer
     nav.tabs.is-boxed
         .container
             ul
-                li(class='#{tab1}'): a VC主程序／音源
-                li(class='#{tab2}'): a 宿主专区
-                li(class='#{tab3}'): a 插件专区
-                li(class='#{tab4}'): a 其他资源
+                li(class='#{tab1}'): a(href='/resources') VC主程序／音源
+                li(class='#{daw}'): a(href='/resources?category=daw') 宿主专区
+                li(class='#{plugin}'): a(href='/resources?category=plugin') 插件专区
+                li(class='#{other}'): a(href='/resources?category=other') 其他资源
 
 block content
     section.section
