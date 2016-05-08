@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var admin = require('./routes/admin');
 
 var passport = require('passport');
 var session = require('express-session');
@@ -54,6 +55,7 @@ require('./config/middleware/users.js')(app);
 // Routers
 app.use('/', routes);
 app.use('/', users);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

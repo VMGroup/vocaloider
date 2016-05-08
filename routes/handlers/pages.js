@@ -32,3 +32,18 @@ exports.login = function (req, res) {
     var msg = req.flash('error').shift();
     res.render('login', {message: msg});
 };
+
+
+/*******************************
+    后台
+********************************/
+exports.admin_works = function (req, res) {
+    var activeTab = 'works';
+    if (req.query.category) {
+        activeTab = req.query.category;
+    }
+    params = {};
+    params[activeTab] = 'is-active';
+
+    res.render('admin/works');
+};
