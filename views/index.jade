@@ -28,11 +28,11 @@ block content
                                 p.content
                                     | 汇集Vocaloid制作相关软件
                                 .columns
-                                    .column: a.button.is-info.is-outlined.is-inverted 主程序/音源
-                                    .column: a.button.is-info.is-outlined.is-inverted 各类宿主
+                                    .column: a.button.is-info.is-outlined.is-inverted(href='/resources') 主程序/音源
+                                    .column: a.button.is-info.is-outlined.is-inverted(href='/resources?category=daw') 各类宿主
                                 .columns
-                                    .column: a.button.is-info.is-outlined.is-inverted 插件专区
-                                    .column: a.button.is-info.is-outlined.is-inverted 其他资源
+                                    .column: a.button.is-info.is-outlined.is-inverted(href='/resources?category=plugin') 插件专区
+                                    .column: a.button.is-info.is-outlined.is-inverted(href='/resources?category=other') 其他资源
                     .tile.is-parent
                         article.tile.is-child.notification.is-danger
                             h1.title 教程专区
