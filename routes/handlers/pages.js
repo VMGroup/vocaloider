@@ -24,6 +24,10 @@ exports.resourceDetail = function (req, res) {
     res.render('resource-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.production_id});
 };
 
+exports.blogEntry = function (req, res) {
+    res.render('blog-entry');
+}
+
 exports.login = function (req, res) {
     if (req.user) {
         res.redirect('/resources');

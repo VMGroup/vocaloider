@@ -8,6 +8,7 @@ router.get('/works', pages.works);
 router.get('/works/:works_id', pages.worksDetail);
 router.get('/resources', pages.resources);
 router.get('/resources/:resource_id', pages.resourceDetail);
+router.get('/blog/:entry_id', pages.blogEntry);
 router.get('/login', pages.login);
 
 module.exports = router;
