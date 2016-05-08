@@ -1,11 +1,11 @@
 extends _layout/base
 
 block hero
-    h1.title Vocaloid 学习制作群
+    h1.title #{blog.title}
     h2.subtitle dyzdyz010
     p.content 2016-05-08
 
 block content
     section.section
         .container
-            p.content
+            p.content!= blog.content

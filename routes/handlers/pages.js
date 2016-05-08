@@ -1,3 +1,5 @@
+var marked = require('marked');
+
 exports.index = function (req, res) {
     res.render('index', {});
 };
@@ -25,8 +27,12 @@ exports.resourceDetail = function (req, res) {
 };
 
 exports.blogEntry = function (req, res) {
-    res.render('blog-entry');
-}
+    blog = {};
+    blog.title = '学习日记（一）';
+    blog.content = 'I am using __markdown__.';
+    blog.content = marked(blog.content);
+    res.render('blog-entry', {blog: blog});
+};
 
 exports.login = function (req, res) {
     if (req.user) {
