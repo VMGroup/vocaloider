@@ -39,11 +39,16 @@ exports.login = function (req, res) {
 ********************************/
 exports.admin_works = function (req, res) {
     var activeTab = 'works';
-    if (req.query.category) {
-        activeTab = req.query.category;
-    }
     params = {};
     params[activeTab] = 'is-active';
 
-    res.render('admin/works');
+    res.render('admin/works', params);
+};
+
+exports.admin_resources = function (req, res) {
+    var activeTab = 'resources';
+    params = {};
+    params[activeTab] = 'is-active';
+
+    res.render('admin/resources', params);
 };
