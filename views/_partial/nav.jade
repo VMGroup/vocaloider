@@ -20,7 +20,7 @@ header.header
             //-         span.icon: i.fa.fa-github
             //-         | Github
             if locals.user
-                a.header-item #{locals.user.username}
+                a.header-item(href='/admin') #{locals.user.username}
                 a.header-item(href='/logout') 登出
             else
                 span.header-item
