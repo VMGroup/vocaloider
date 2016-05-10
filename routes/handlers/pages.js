@@ -26,6 +26,10 @@ exports.resourceDetail = function (req, res) {
     res.render('resource-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.production_id});
 };
 
+exports.blogList = function (req, res) {
+    res.render('blog-list');
+};
+
 exports.blogEntry = function (req, res) {
     blog = {};
     blog.title = '学习日记（一）';
