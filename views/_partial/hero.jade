@@ -1,7 +1,9 @@
 section.hero.is-primary.is-left.is-bold
-    include nav
+    .hero-head
+        .container
+            include nav
 
-    .hero-content
+    .hero-body
         .container
             .columns.is-vcentered
                 .column
@@ -24,5 +26,5 @@ section.hero.is-primary.is-left.is-bold
             //- .column.box.site-progress
             //-     h3.title.is-3 本站建设进度
             //-     progress.progress.is-danger(value='15', max='100') 15%
-    .hero-footer
-        block hero-footer
+    .hero-foot
+        block hero-foot

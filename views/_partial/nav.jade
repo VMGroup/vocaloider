@@ -1,27 +1,26 @@
-header.header
-    .container
-        .header-left
-            a.header-item(href='/'): h1.title VMGroup
-            a.header-item(class='#{home}', href='/')
-                //- span.icon: i.fa.fa-home
-                | 首页
-            a.header-item(class='#{productions}', href='/works')
-                //- span.icon: i.fa.fa-star
-                | 成员作品
-            a.header-item(class='#{resources}', href='/resources')
-                //- span.icon: i.fa.fa-star
-                | 资源
-            a.header-item(class='#{members}')
-                //- span.icon: i.fa.fa-star
-                | 成员简介
-        .header-right
-            //- span.header-item
-            //-     a.button.is-info.is-outlined.is-inverted
-            //-         span.icon: i.fa.fa-github
-            //-         | Github
-            if locals.user
-                a.header-item(href='/admin') #{locals.user.username}
-                a.header-item(href='/logout') 登出
-            else
-                span.header-item
-                    a.button.is-info.is-outlined.is-inverted(href='/login') 登录
+nav.nav
+    .nav-left
+        a.nav-item(href='/'): h1.title VMGroup
+        a.nav-item(class='#{home}', href='/')
+            //- span.icon: i.fa.fa-home
+            | 首页
+        a.nav-item(class='#{productions}', href='/works')
+            //- span.icon: i.fa.fa-star
+            | 成员作品
+        a.nav-item(class='#{resources}', href='/resources')
+            //- span.icon: i.fa.fa-star
+            | 资源
+        a.nav-item(class='#{members}')
+            //- span.icon: i.fa.fa-star
+            | 成员简介
+    .nav-right
+        //- span.nav-item
+        //-     a.button.is-info.is-outlined.is-inverted
+        //-         span.icon: i.fa.fa-github
+        //-         | Github
+        if locals.user
+            a.nav-item(href='/admin') #{locals.user.username}
+            a.nav-item(href='/logout') 登出
+        else
+            span.nav-item
+                a.button.is-light.is-outlined(href='/login') 登录

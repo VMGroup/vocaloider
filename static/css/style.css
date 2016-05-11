@@ -28,7 +28,7 @@
 	float: right;
 }
 
-.card .production-author {
+.card .works-author {
 	padding-top: 5px;
 }
 
@@ -39,4 +39,15 @@
 
 .tag.resource-download-link {
     margin-right: 10px;
+}
+
+.blog-list-item {
+	margin-bottom: 10px;
+}
+
+.blog-list .seperator {
+	display: block;
+	width: 100%;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 40px 20px;
 }
