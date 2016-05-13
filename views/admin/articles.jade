@@ -1,0 +1,22 @@
+extends ../_layout/admin
+
+block hero
+    h1.title Vocaloid 学习制作群 控制台
+    h2.subtitle 教程、资源集散地
+    p.content 天灵灵地灵灵，太上老君快显灵
+
+block content
+    section.section
+        .container
+            table.table
+                thead
+                    th 标题
+                    th 作者
+                    th 修改时间
+                    th 删除
+                tbody
+                    tr
+                        td 星尘V4声库
+                        td dyzdyz010
+                        td 2016-05-08
+                        td: a(href='/resources/abcdefg/delete') 删除

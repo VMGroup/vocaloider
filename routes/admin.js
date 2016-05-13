@@ -7,5 +7,6 @@ router.get('/', function (req, res) {
 });
 router.get('/works', pages.admin_works);
 router.get('/resources', pages.admin_resources);
+router.get('/articles', pages.admin_articles);
 
 module.exports = router;

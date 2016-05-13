@@ -1,35 +1,43 @@
+/*Overwrite Bulma classes*/
+.modal-card-body {
+    -webkit-box-flex: none;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+}
+
 .transparent {
-	background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .transparent progress {
-	opacity: 0.9;
+    opacity: 0.9;
 }
 
 .tile .blog-list:last-child {
-	padding-bottom: 0;
+    padding-bottom: 0;
 }
 
 .tile .blog-list li {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .tile .blog-list a {
-	color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .tile .blog-list a:hover {
-	color: white;
+    color: white;
 }
 
 .tile .blog-list .date {
-	float: right;
+    float: right;
 }
 
 .card .works-author {
-	padding-top: 5px;
+    padding-top: 5px;
 }
 
 .tag {
@@ -42,12 +50,12 @@
 }
 
 .blog-list-item {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .blog-list .seperator {
-	display: block;
-	width: 100%;
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	margin: 40px 20px;
+    display: block;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 40px 20px;
 }

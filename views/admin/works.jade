@@ -8,6 +8,20 @@ block hero
 block content
     section.section
         .container
+            a.button.is-primary.is-outlined.is-large.modal-button(data-target='#new-works') 添加
+            #new-works.modal
+                .modal-background
+                .modal-card
+                    header.modal-card-head
+                        p.modal-card-title 添加作品
+                        button.delete
+                    section.modal-card-body
+                        h1 hello
+                        p.content hello
+                    footer.modal-card-foot
+                        a.button.is-primary 保存
+                        a.button 取消
+
             table.table
                 thead
                     th 标题
@@ -20,3 +34,6 @@ block content
                         td dyzdyz010
                         td 2016-05-08
                         td: a(href='/works/abcdefg/delete') 删除
+
+block scripts
+    script(src='/js/modal.js')

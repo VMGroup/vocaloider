@@ -66,3 +66,11 @@ exports.admin_resources = function (req, res) {
 
     res.render('admin/resources', params);
 };
+
+exports.admin_articles = function (req, res) {
+    var activeTab = 'articles';
+    params = {};
+    params[activeTab] = 'is-active';
+
+    res.render('admin/articles', params);
+};
