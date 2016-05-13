@@ -27,11 +27,11 @@ block content
                                 h1.title 资源共享区
                                 p.content
                                     | 汇集Vocaloid制作相关软件
-                                .columns.is-multiline
-                                    .column.is-6: a.button.is-light.is-outlined(href='/resources') 主程序/音源
-                                    .column.is-6: a.button.is-light.is-outlined(href='/resources?category=daw') 各类宿主
-                                    .column.is-6: a.button.is-light.is-outlined(href='/resources?category=plugin') 插件专区
-                                    .column.is-6: a.button.is-light.is-outlined(href='/resources?category=other') 其他资源
+                                .columns.is-multiline.is-mobile
+                                    .column.is-narrow: a.button.is-light.is-outlined(href='/resources') 主程序/音源
+                                    .column.is-narrow: a.button.is-light.is-outlined(href='/resources?category=daw') 各类宿主
+                                    .column.is-narrow: a.button.is-light.is-outlined(href='/resources?category=plugin') 插件专区
+                                    .column.is-narrow: a.button.is-light.is-outlined(href='/resources?category=other') 其他资源
                     .tile.is-parent
                         article.tile.is-child.notification.is-danger
                             h1.title 教程专区
@@ -43,15 +43,18 @@ block content
                         h1.title 博客专区
                         ul.blog-list
                             li
-                                a 【这是教程】Vocaloid 4 技巧调教
-                                span.date 04-16
+                                a(href='/blog/asdf') 【这是教程】Vocaloid 4 技巧调教
+                                //- span.date 04-16
                             li
                                 a 只是交换！！【别告诉我你们全玩的破解版】
-                                span.date 04-16
+                                //- span.date 04-16
                             li
                                 a 只是交换！！【别告诉我你们全玩的破解版】
-                                span.date 04-16
+                                //- span.date 04-16
                             li
                                 a alskdfj lkasd fasjdlf jalsdkf adsjlfj alsdkjf asdlfj akl 
-                                span.date 04-16
+                                //- span.date 04-16
+                            li
+                                a alskdfj lkasd fasjdlf jalsdkf adsjlfj alsdkjf asdlfj akl 
+                                //- span.date 04-16
                         a.button.is-light.is-outlined.is-pulled-right(href='/blog') 更多
