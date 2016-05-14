@@ -10,17 +10,20 @@ block content
         .container
             a.button.is-primary.is-outlined.is-large.modal-button(data-target='#new-works') 添加
             #new-works.modal
-                .modal-background
-                .modal-card
-                    header.modal-card-head
-                        p.modal-card-title 添加作品
-                        button.delete
-                    section.modal-card-body
-                        h1 hello
-                        p.content hello
-                    footer.modal-card-foot
-                        a.button.is-primary 保存
-                        a.button 取消
+                form(method='POST' action='/addWorks')
+                    .modal-background
+                    .modal-card
+                        header.modal-card-head
+                            p.modal-card-title 添加作品
+                            a.delete
+                        section.modal-card-body
+                            .control
+                                input.input(type='text' name='title' placeholder='标题')
+                            .control
+                                input.input(type='text' name='description' placeholder='描述')
+                        footer.modal-card-foot
+                            input.button.is-success(type='submit' value='保存')
+                            a.button 取消
 
             table.table
                 thead

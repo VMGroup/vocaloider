@@ -7,11 +7,13 @@ $(document).ready(function () {
 
     $('.modal-background, .modal-close').click(function() {
         $('html').removeClass('is-clipped');
-        $(this).parent().removeClass('is-active');
+        $(this).parents('.is-active').removeClass('is-active');
     });
 
-    $('.modal-card-head .delete, .modal-card-foot .button').click(function() {
+    $('form .modal-card-head .delete, .modal-card-foot .button').click(function() {
+        var modal = $(this).parents('.is-active');
+        console.log(modal);
         $('html').removeClass('is-clipped');
-        $(this).parent().parent().parent().removeClass('is-active');
+        modal.removeClass('is-active');
     });
 });
