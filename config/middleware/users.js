@@ -4,7 +4,7 @@ module.exports = function (app) {
         next();
     });
 
-    app.use(['/resources', '/works'], function(req, res, next) {
+    app.use(['/resources', '/works', '/admin'], function(req, res, next) {
     	if (!req.user) {
             console.log(req.session);
     		res.redirect('/login');
