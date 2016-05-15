@@ -14,6 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "bcrypt": "latest",
+    "bluebird": "^3.3.5",
     "body-parser": "~1.13.2",
     "connect-flash": "latest",
     "connect-mongo": "latest",
