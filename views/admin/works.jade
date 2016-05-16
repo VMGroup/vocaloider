@@ -21,9 +21,15 @@ block content
                                 input.input(type='text' name='title' placeholder='标题')
                             .control
                                 input.input(type='text' name='description' placeholder='描述')
+                            .control.is-grouped
+                                input.input(type='text', name='link-name' placeholder='链接名称')
+                                input.input(type='text', name='link' placeholder='链接')
+                                input.input(type='text', name='link-description' placeholder='额外说明')
+                                a.button.is-link 删除
                         footer.modal-card-foot
                             input.button.is-success(type='submit' value='保存')
-                            a.button 取消
+                            a#add-link.button.is-info.is-outlined 新增链接
+                            a.button.cancel 取消
 
             table.table
                 thead
