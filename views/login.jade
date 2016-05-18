@@ -14,9 +14,8 @@ block content
             .columns
                 .column.is-4.is-offset-4
                     h1.title 登录
-                    
-                    if locals.message
-                        .notification.is-danger #{message}
+
+                    include _partial/message
                     form(method='POST' action='/login')
                         p.control.has-icon
                             input.input(type='text', name='username', placeholder='用户名')

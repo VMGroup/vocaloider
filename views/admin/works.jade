@@ -8,6 +8,8 @@ block hero
 block content
     section.section
         .container
+            include ../_partial/message
+
             a.button.is-primary.is-outlined.is-large.modal-button(data-target='#new-works') 添加
             #new-works.modal
                 form(method='POST' action='/admin/addWorks')

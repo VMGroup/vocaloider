@@ -44,7 +44,7 @@ exports.login = function (req, res) {
         return;
     }
     var msg = req.flash('error').shift();
-    res.render('login', {message: msg});
+    res.render('login', {message: {error: msg}});
 };
 
 
