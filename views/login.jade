@@ -12,7 +12,7 @@ block content
     section.section
         .container
             .columns
-                .column.is-6.is-offset-3
+                .column.is-4.is-offset-4
                     h1.title 登录
                     
                     if locals.message
@@ -26,4 +26,4 @@ block content
                             i.fa.fa-lock
                         p.control
                             input.button.is-success(type='submit', value='登录')
-                            button.button.is-link(style='margin-left: 10px;') 取消
+                            a.button.is-link(style='margin-left: 10px;', href='/') 取消
