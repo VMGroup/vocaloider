@@ -26,13 +26,20 @@ block content
                             .links
                                 .control.is-grouped.link
                                     input.input(type='text', name='link-name' placeholder='链接名称')
-                                    input.input(type='text', name='link' placeholder='链接')
+                                    input.input(type='url', name='link-url' placeholder='链接')
                                     input.input(type='text', name='link-description' placeholder='额外说明')
                                     a.button.is-danger.is-outlined.is-delete 删除
                         footer.modal-card-foot
                             input.button.is-success(type='submit' value='保存')
                             a#add-link.button.is-info.is-outlined 新增链接
                             a.button.cancel 取消
+
+            //- Template dom for dom operation
+            .control.is-grouped.link.is-hidden.link-template
+                input.input(type='text', name='link-name' placeholder='链接名称')
+                input.input(type='url', name='link-url' placeholder='链接')
+                input.input(type='text', name='link-description' placeholder='额外说明')
+                a.button.is-danger.is-outlined.is-delete 删除
 
             table.table
                 thead

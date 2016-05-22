@@ -4,7 +4,8 @@ $(document).ready(function () {
         if (linkNum >= 3) {
             return;
         }
-        var linkDom = '<div class="control is-grouped link"><input type="text" name="link-name" placeholder="链接名称" class="input"><input type="text" name="link" placeholder="链接" class="input"><input type="text" name="link-description" placeholder="额外说明" class="input"><a class="button is-danger is-outlined is-delete">删除</a></div>';
+
+        var linkDom = $('.link-template').clone().removeClass('is-hidden link-template');
         console.log(linkDom);
         $('.links').append(linkDom);
         $('.is-delete').click(deleteLinkHandler);
@@ -27,6 +28,23 @@ $(document).ready(function () {
         }
     };
 
+    var validateHandler = function() {
+        if ($(this).val().length === 0) {
+            $(this).addClass('is-danger');
+            $('input[type="submit"]').addClass('is-disabled');
+        } else {
+            $(this).removeClass('is-danger');
+            $('input[type="submit"]').removeClass('is-disabled');
+        }
+        console.log($(this).val().length);
+    };
+
     $('#add-link').click(addLinkHandler);
     $('.is-delete').click(deleteLinkHandler);
+    $('input[name="title"]').on('input', validateHandler);
+    $('input[name="description"]').on('input', validateHandler);
+
+    if ($('input[type="submit"]').val().length === 0) {
+        $(this).addClass('is-disabled');
+    }
 });
