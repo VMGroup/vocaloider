@@ -23,11 +23,12 @@ block content
                                 input.input(type='text' name='title' placeholder='标题')
                             .control
                                 input.input(type='text' name='description' placeholder='描述')
-                            .control.is-grouped
-                                input.input(type='text', name='link-name' placeholder='链接名称')
-                                input.input(type='text', name='link' placeholder='链接')
-                                input.input(type='text', name='link-description' placeholder='额外说明')
-                                a.button.is-link 删除
+                            .links
+                                .control.is-grouped.link
+                                    input.input(type='text', name='link-name' placeholder='链接名称')
+                                    input.input(type='text', name='link' placeholder='链接')
+                                    input.input(type='text', name='link-description' placeholder='额外说明')
+                                    a.button.is-danger.is-outlined.is-delete 删除
                         footer.modal-card-foot
                             input.button.is-success(type='submit' value='保存')
                             a#add-link.button.is-info.is-outlined 新增链接
@@ -48,3 +49,4 @@ block content
 
 block scripts
     script(src='/js/modal.js')
+    script(src='/js/admin-works.js')

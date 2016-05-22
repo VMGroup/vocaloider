@@ -1,7 +1,7 @@
 var Works = require('../../models/works');
 
 exports.AddWorks = function (req, res) {
-
+    console.log(req.body);
     var works = new Works();
     works.title = req.body.title;
     works.description = req.body.description;
@@ -12,7 +12,9 @@ exports.AddWorks = function (req, res) {
     var message = {};
     message.success = '添加成功！';
 
-    res.render('admin/works', {message: message});
+    req.flash('message', message);
+
+    res.redirect('/admin/works');
 };
 
 exports.DeleteWorks = function (req, res) {

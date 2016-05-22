@@ -6,7 +6,8 @@ var WorksSchema = new Schema({
     description: {type: String, required: true, default: '这人什么都没说ˊ_>ˋ'},
     date: {type: Date, default: Date.now()},
     uploader: {type: Schema.Types.ObjectId, ref: 'User', required: true},
-    links: [Schema.Types.Mixed]
+    links: [Schema.Types.Mixed],
+    content: {type: String}
 });
 
 module.exports = mongoose.model('Works', WorksSchema);

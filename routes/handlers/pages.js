@@ -55,6 +55,7 @@ exports.admin_works = function (req, res) {
     var activeTab = 'works';
     params = {};
     params[activeTab] = 'is-active';
+    params.message = req.flash('message').shift();
 
     res.render('admin/works', params);
 };

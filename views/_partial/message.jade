@@ -1,9 +1,9 @@
-if locals.message
-    if locals.message.error
+if message
+    if message.error
         .notification.is-danger #{message.error}
-    if locals.message.success
+    if message.success
         .notification.is-success #{message.success}
-    if locals.message.warning
+    if message.warning
         .notification.is-warning #{message.warning}
-    if locals.message.info
+    if message.info
         .notification.is-info #{message.info}
