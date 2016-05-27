@@ -9,11 +9,11 @@ exports.AddWorks = function (req, res) {
     works.uploader = req.user._id;
 
     if (typeof req.body['link-name'] === 'string') {
-        var link = {};
-        link.name = req.body['link-name'];
-        link.url = req.body['link-url'];
-        link.description = req.body['link-description'];
-        works.links.push(link);
+        var l = {};
+        l.name = req.body['link-name'];
+        l.url = req.body['link-url'];
+        l.description = req.body['link-description'];
+        works.links.push(l);
     } else {
         for (var i = 0; i < req.body['link-name'].length; i++) {
             var link = {};
