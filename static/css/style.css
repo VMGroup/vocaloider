@@ -59,3 +59,8 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     margin: 40px 20px;
 }
+
+.bilibili-video embed {
+    display: block;
+    margin: 0 auto;
+}
