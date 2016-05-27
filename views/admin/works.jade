@@ -30,11 +30,14 @@ block content
                                     input.input(type='text', name='link-description' placeholder='额外说明')
                                     a.button.is-danger.is-outlined.is-delete 删除
                             .control
+                                a#add-link.button.is-info.is-outlined
+                                    i.fa.fa-plus
+                            .control
                                 input.input(type='text' name='av' placeholder='B站av号')
                         footer.modal-card-foot
-                            input.button.is-success(type='submit' value='保存')
-                            a#add-link.button.is-info.is-outlined 新增链接
-                            a.button.cancel 取消
+                            p.control.is-grouped
+                                input.button.is-success(type='submit' value='保存')
+                                a.button.cancel 取消
 
             //- Template dom for dom operation
             .control.is-grouped.link.is-hidden.link-template
