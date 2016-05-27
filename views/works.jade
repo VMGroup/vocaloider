@@ -1,7 +1,7 @@
 extends _layout/base
 
 block vars
-    - var productions = 'is-active'
+    - var works = 'is-active'
 
 block hero
     h1.title 成员作品
@@ -23,14 +23,14 @@ block content
                                 .media-content
                                     h5.title.is-5
                                         a(href='/works/abcde') 【巡音ルカ】コメットルシファー ～The Seed and the Sower～
-                                    h6.subtitle.is-6.works-author: strong @dyzdyz010
+                                    h6.subtitle.is-6.work-author: strong @dyzdyz010
                             .content
                                 | alksdj fladsjlkf adsf lasdfl adsjlf akdsfj asdlfj alsdkf laksdjf lasdkjf laksdjf 
                             .content.columns
-                                p.subtitle.is-6.works-date.column
+                                p.subtitle.is-6.work-date.column
                                     span.icon.is-small: i.fa.fa-clock-o
                                     | Jan 2016
-                                p.subtitle.is-6.works-date.column
+                                p.subtitle.is-6.work-date.column
                                     span.icon.is-small: i.fa.fa-comments
                                     span.disqus-comment-count(data-disqus-identifier='abcde') Loading
     include _partial/comment-count

@@ -5,7 +5,7 @@ var pages = require('./handlers/pages');
 /* GET home page. */
 router.get('/', pages.index);
 router.get('/works', pages.works);
-router.get('/works/:works_id', pages.worksDetail);
+router.get('/works/:work_id', pages.workDetail);
 router.get('/resources', pages.resources);
 router.get('/resources/:resource_id', pages.resourceDetail);
 router.get('/blog', pages.blogList);

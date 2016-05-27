@@ -10,6 +10,6 @@ router.get('/works', pages.admin_works);
 router.get('/resources', pages.admin_resources);
 router.get('/articles', pages.admin_articles);
 
-router.post('/addWorks', admin.AddWorks);
+router.post('/addWork', admin.AddWork);
 
 module.exports = router;

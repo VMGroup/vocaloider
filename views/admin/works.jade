@@ -12,7 +12,7 @@ block content
 
             a.button.is-primary.is-outlined.is-large.modal-button(data-target='#new-works') 添加
             #new-works.modal
-                form(method='POST' action='/admin/addWorks')
+                form(method='POST' action='/admin/addWork')
                     .modal-background
                     .modal-card
                         header.modal-card-head
@@ -23,12 +23,14 @@ block content
                                 input.input(type='text' name='title' placeholder='标题')
                             .control
                                 input.input(type='text' name='description' placeholder='描述')
-                            .links
+                            .links.control
                                 .control.is-grouped.link
                                     input.input(type='text', name='link-name' placeholder='链接名称')
                                     input.input(type='url', name='link-url' placeholder='链接')
                                     input.input(type='text', name='link-description' placeholder='额外说明')
                                     a.button.is-danger.is-outlined.is-delete 删除
+                            .control
+                                input.input(type='text' name='av' placeholder='B站av号')
                         footer.modal-card-foot
                             input.button.is-success(type='submit' value='保存')
                             a#add-link.button.is-info.is-outlined 新增链接

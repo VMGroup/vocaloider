@@ -1,39 +1,45 @@
-var Works = require('../../models/works');
+var Work = require('../../models/work');
 
-exports.AddWorks = function (req, res) {
+exports.AddWork = function (req, res) {
     console.log(req.body);
-    var works = new Works();
-    works.title = req.body.title;
-    works.description = req.body.description;
-    works.date = new Date();
-    works.uploader = req.user._id;
+    var work = new Work();
+    work.title = req.body.title;
+    work.description = req.body.description;
+    work.date = new Date();
+    work.uploader = req.user._id;
+    work.av = req.body.av
 
     if (typeof req.body['link-name'] === 'string') {
         var l = {};
         l.name = req.body['link-name'];
         l.url = req.body['link-url'];
         l.description = req.body['link-description'];
-        works.links.push(l);
+        work.links.push(l);
     } else {
         for (var i = 0; i < req.body['link-name'].length; i++) {
             var link = {};
             link.name = req.body['link-name'][i];
             link.url = req.body['link-url'][i];
             link.description = req.body['link-description'][i];
-            works.links.push(link);
+            work.links.push(link);
         }
     }
 
-    console.log(works);
-
+    console.log(work);
     var message = {};
-    message.success = '添加成功！';
+    Work.create(work, function (err) {
+        if (err) {
+            console.log(err);
+            message.error = err;
+        } else {
+            message.success = '添加成功！';
+        }
 
-    req.flash('message', message);
-
-    res.redirect('/admin/works');
+        req.flash('message', message);
+        res.redirect('/admin/works');
+    });
 };
 
-exports.DeleteWorks = function (req, res) {
+exports.DeleteWork = function (req, res) {
 
 };

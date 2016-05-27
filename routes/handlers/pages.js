@@ -8,8 +8,8 @@ exports.works = function (req, res) {
     res.render('works', {});
 };
 
-exports.worksDetail = function (req, res) {
-    res.render('works-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.works_id});
+exports.workDetail = function (req, res) {
+    res.render('work-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.works_id});
 };
 
 exports.resources = function (req, res) {
