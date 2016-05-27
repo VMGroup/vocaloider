@@ -1,11 +1,24 @@
 var marked = require('marked');
+var Work = require('../../models/work');
 
 exports.index = function (req, res) {
     res.render('index', {});
 };
 
 exports.works = function (req, res) {
-    res.render('works', {});
+    var data = {
+        message: {},
+        workList: []
+    };
+    Work.find(null, function (err, works) {
+        if (err) {
+            data.message.error = err;
+        } else {
+            data.workList = works;
+        }
+
+        res.render('works', data);
+    });
 };
 
 exports.workDetail = function (req, res) {
