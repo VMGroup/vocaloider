@@ -7,7 +7,7 @@ exports.AddWork = function (req, res) {
     work.description = req.body.description;
     work.date = new Date();
     work.uploader = req.user._id;
-    work.av = req.body.av
+    work.av = req.body.av;
 
     if (typeof req.body['link-name'] === 'string') {
         var l = {};

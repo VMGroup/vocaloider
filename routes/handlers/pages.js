@@ -22,7 +22,22 @@ exports.works = function (req, res) {
 };
 
 exports.workDetail = function (req, res) {
-    res.render('work-detail', {pageUrl: req.originalUrl, pageIdentifier: req.params.works_id});
+    var data = {
+        message: {},
+        workItem: {},
+        pageUrl: req.originalUrl,
+        pageIdentifier: req.params.work_id
+    };
+
+    Work.findById(req.params.work_id, function (err, work) {
+        if (err) {
+            data.message.error = err;
+        } else {
+            data.workItem = work;
+        }
+
+        res.render('work-detail', data);
+    });
 };
 
 exports.resources = function (req, res) {

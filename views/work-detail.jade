@@ -4,8 +4,8 @@ block vars
     - var works = 'is-active'
 
 block hero
-    h1.title 【巡音ルカ】コメットルシファー ～The Seed and the Sower～
-    h2.subtitle @dyzdyz010
+    h1.title #{workItem.title}
+    h2.subtitle @#{workItem.uploader}
     .content.tags
         span.tag.is-dark 巡音ルカ
     p.content 作詞はMYOさん(mylist/38210282)
@@ -22,7 +22,7 @@ block hero
             .column.is-3
                 span.tag
                     a(href='http://pan.baidu.com') 百度盘
-                    &nbsp;
+                    | &nbsp;
                     | 提取码：n3jp
 
 block content
