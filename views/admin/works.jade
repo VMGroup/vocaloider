@@ -53,11 +53,12 @@ block content
                     th 提供时间
                     th 删除
                 tbody
-                    tr
-                        td 【巡音ルカ】コメットルシファー ～The Seed and the Sower～
-                        td dyzdyz010
-                        td 2016-05-08
-                        td: a(href='/works/abcdefg/delete') 删除
+                    - each w in workList
+                        tr
+                            td #{w.title}
+                            td #{w.uploader}
+                            td #{w.date}
+                            td: a(href='/works/#{w._id}/delete') 删除
 
 block scripts
     script(src='/js/modal.js')

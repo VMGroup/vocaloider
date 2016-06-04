@@ -85,7 +85,15 @@ exports.admin_works = function (req, res) {
     params[activeTab] = 'is-active';
     params.message = req.flash('message').shift();
 
-    res.render('admin/works', params);
+    Work.find().sort({date: -1}).exec(function (err, data) {
+        if (err) {
+            params.message = {error: err};
+        } else {
+            params.workList = data;
+        }
+
+        res.render('admin/works', params);
+    });
 };
 
 exports.admin_resources = function (req, res) {
