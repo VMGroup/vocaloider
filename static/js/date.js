@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.work-date').text();
+    moment.lang('zh-cn');
     var dateDomArr = $('.work-date');
     for (var i = 0; i < dateDomArr.length; i++) {
         var dateStr = moment($(dateDomArr[i]).text()).calendar();

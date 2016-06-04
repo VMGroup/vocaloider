@@ -8,12 +8,7 @@ block hero
     h2.subtitle @#{workItem.uploader}
     .content.tags
         span.tag.is-dark 巡音ルカ
-    p.content 作詞はMYOさん(mylist/38210282)
-
-        br 
-        | イラストはピアプロよりミルクティーさん(http://piapro.jp/milktea101)の作品をお借りしました
-        br
-        | これまでの自作曲(mylist/32258513)
+    p.content.marked #{workItem.description}
         
     p.content.subtitle.is-6 11:09 PM - 1 Jan 2016
     .box.transparent
@@ -29,6 +24,10 @@ block content
     section.section
         .container
             .bilibili-video
-                embed(height='542' width='710' quality='high' allowfullscreen='true' type='application/x-shockwave-flash' src='http://static.hdslb.com/miniloader.swf' flashvars='aid=4656416&page=1' pluginspage='http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash')
+                embed(height='542' width='710' quality='high' allowfullscreen='true' type='application/x-shockwave-flash' src='http://static.hdslb.com/miniloader.swf' flashvars='aid=#{workItem.av}&page=1' pluginspage='http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash')
 
             include _partial/comments
+
+block scripts
+    script(src='/vendor/marked.min.js')
+    script(src='/js/markdown.js')

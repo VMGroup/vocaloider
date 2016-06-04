@@ -10,7 +10,7 @@ exports.works = function (req, res) {
         message: {},
         workList: []
     };
-    Work.find(null, function (err, works) {
+    Work.find().populate('uploader').exec(function (err, works) {
         if (err) {
             data.message.error = err;
         } else {
@@ -87,7 +87,7 @@ exports.admin_works = function (req, res) {
 
     Work.find().sort({date: -1}).exec(function (err, data) {
         if (err) {
-            params.message = {error: err};
+            params.message.error = err;
         } else {
             params.workList = data;
         }
