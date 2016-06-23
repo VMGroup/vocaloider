@@ -11,5 +11,6 @@ router.get('/resources', pages.admin_resources);
 router.get('/articles', pages.admin_articles);
 
 router.post('/addWork', admin.AddWork);
+router.get('/works/:work_id/delete', admin.DeleteWork);
 
 module.exports = router;

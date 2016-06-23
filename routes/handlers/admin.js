@@ -41,5 +41,17 @@ exports.AddWork = function (req, res) {
 };
 
 exports.DeleteWork = function (req, res) {
+    var message = {};
 
+    Work.findById(req.params.work_id, function (err, work) {
+        if (err) {
+            message.error = err;
+        } else {
+            var q = Work.remove({_id: req.params.work_id});
+            q.exec();
+            message.success = '删除成功';
+        }
+        req.flash('message', message);
+        res.redirect('/admin/works');
+    });
 };

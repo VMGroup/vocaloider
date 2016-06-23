@@ -59,9 +59,9 @@ block content
                     - each w in workList
                         tr
                             td #{w.title}
-                            td #{w.uploader}
+                            td #{w.uploader.username}
                             td #{w.date}
-                            td: a(href='/works/#{w._id}/delete') 删除
+                            td: a(href='/admin/works/#{w._id}/delete') 删除
 
 block scripts
     script(src='/js/modal.js')
