@@ -100,6 +100,7 @@ exports.admin_resources = function (req, res) {
     var activeTab = 'resources';
     params = {};
     params[activeTab] = 'is-active';
+    params.resourceList = [];
 
     res.render('admin/resources', params);
 };

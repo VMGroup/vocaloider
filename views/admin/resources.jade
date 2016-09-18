@@ -8,6 +8,54 @@ block hero
 block content
     section.section
         .container
+            include ../_partial/message
+
+            a.button.is-primary.is-outlined.is-large.modal-button(data-target='#new-resource') 添加
+            #new-resource.modal
+                form(method='POST' action='/admin/addResource')
+                    .modal-background
+                    .modal-card
+                        header.modal-card-head
+                            p.modal-card-title 添加资源
+                            a.delete
+                        section.modal-card-body
+                            .control.is-horizontal
+                                .control.is-grouped
+                                    .control.is-expanded
+                                        input.input(type='text' name='title' placeholder='标题')
+                                    .control.is-expanded
+                                        span.select
+                                            select
+                                                option VC主程序/音源
+                                                option 宿主
+                                                option 插件
+                                                option 其他
+                            .control
+                                //- input.input(type='text' name='description' placeholder='描述')
+                                textarea.textarea(name='description' placeholder='描述')
+                            .links.control
+                                .control.is-grouped.link
+                                    input.input(type='text', name='link-name' placeholder='链接名称')
+                                    input.input(type='url', name='link-url' placeholder='链接')
+                                    input.input(type='text', name='link-description' placeholder='额外说明')
+                                    a.button.is-danger.is-outlined.is-delete 删除
+                            .control
+                                a#add-link.button.is-info.is-outlined
+                                    i.fa.fa-plus
+                            .control
+                                input.input(type='text' name='tags' placeholder='标签')
+                        footer.modal-card-foot
+                            p.control.is-grouped
+                                input.button.is-success(type='submit' value='保存')
+                                a.button.cancel 取消
+
+            //- Template dom for dom operation
+            .control.is-grouped.link.is-hidden.link-template
+                input.input(type='text', name='link-name' placeholder='链接名称')
+                input.input(type='url', name='link-url' placeholder='链接')
+                input.input(type='text', name='link-description' placeholder='额外说明')
+                a.button.is-danger.is-outlined.is-delete 删除
+
             table.table
                 thead
                     th 标题
@@ -15,8 +63,13 @@ block content
                     th 提供时间
                     th 删除
                 tbody
-                    tr
-                        td 星尘V4声库
-                        td dyzdyz010
-                        td 2016-05-08
-                        td: a(href='/resources/abcdefg/delete') 删除
+                    - each r in resourceList
+                        tr
+                            td #{s.title}
+                            td #{s.uploader.username}
+                            td #{s.date}
+                            td: a(href='/admin/works/#{s._id}/delete') 删除
+
+block scripts
+    script(src='/js/modal.js')
+    script(src='/js/admin-works.js')
